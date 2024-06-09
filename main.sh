@@ -457,7 +457,7 @@ Description=My
 ProjectAfter=network.target
 [Service]
 WorkingDirectory=/root
-ExecStart=/usr/bin/files-ip vmip
+ExecStart=/usr/bin/limit-ip vmip
 Restart=always
 [Install]
 WantedBy=multi-user.target
@@ -471,7 +471,7 @@ Description=My
 ProjectAfter=network.target
 [Service]
 WorkingDirectory=/root
-ExecStart=/usr/bin/files-ip vlip
+ExecStart=/usr/bin/limit-ip vlip
 Restart=always
 [Install]
 WantedBy=multi-user.target
@@ -485,7 +485,7 @@ Description=My
 ProjectAfter=network.target
 [Service]
 WorkingDirectory=/root
-ExecStart=/usr/bin/files-ip trip
+ExecStart=/usr/bin/limit-ip trip
 Restart=always
 [Install]
 WantedBy=multi-user.target
@@ -568,7 +568,7 @@ print_success "Vnstat"
 function ins_openvpn(){
 clear
 print_install "Menginstall OpenVPN"
-wget ${REPO}Vpn/openvpn &&  chmod +x openvpn && ./openvpn
+wget ${REPO}Fls/openvpn &&  chmod +x openvpn && ./openvpn
 /etc/init.d/openvpn restart
 print_success "OpenVPN"
 }
@@ -837,19 +837,13 @@ rm -rf /root/domain
 secs_to_human "$(($(date +%s) - ${start}))"
 sudo hostnamectl set-hostname $username
 clear
-echo -e ""
-echo -e ""
 echo -e "\033[96m==========================\033[0m"
 echo -e "\033[92m      INSTALL SUCCES      \033[0m"
 echo -e "\033[96m==========================\033[0m"
 echo -e ""
-sleep 2
-clear
 echo -e "\033[93;1m Wait inn 4 sec...\033[0m"
 sleep 4
 clear
-echo ""
-echo ""
 echo ""
 read -p "Press [ Enter ]  TO REBOOT"
 reboot
