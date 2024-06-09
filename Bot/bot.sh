@@ -1,12 +1,12 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipinfo.io/ip);
 
-IZIN=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/gentaarj/izinsc/main/ip | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo "IZIN DI TERIMA!!"
 else
 clear
-figlet "Akses di tolak!! Silakan Hubungi Admin" | lolcat
+echo -e "Akses di tolak!! Silakan Hubungi Admin"
 exit 0
 fi
 
