@@ -1,7 +1,7 @@
 #!/bin/bash
 # Edition : Stable Edition V3.0
-# Author  : LT PROJECT
-# (C) Copyright 2019
+# Auther  : Geo Project
+# (C) Copyright 2023
 # =========================================
 
 red='\e[1;31m'
@@ -18,7 +18,8 @@ clear
 #	 menu
 #else
 
-echo -e "${green}Installing bbr${NC}"
+echo -e "Installing TCP BBR Mod By Kyt & Ridwan"
+echo -e "Please Wait BBR Installation Will Starting . . ."
 sleep 5
 clear
 
