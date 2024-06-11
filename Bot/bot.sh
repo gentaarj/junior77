@@ -184,3 +184,5 @@ cp /tmp/var.txt /media/cybervpn
 echo " Installations complete, type /menu on your bot "
 
 rm /media/cybervpn.zip
+rm -rf bot.sh
+rm -rf bot.sh.1
