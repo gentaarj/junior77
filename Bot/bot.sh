@@ -10,6 +10,11 @@ echo -e "Akses di tolak!! Silakan Hubungi Admin"
 exit 0
 fi
 
+# dir virtual
+pip3 install virtualenv
+cd /usr/bin
+virtualenv myenv
+source myenv/bin/activate
 #install
 cp /media/cybervpn/var.txt /tmp
 cp /root/cybervpn/var.txt /tmp
@@ -33,9 +38,13 @@ pip3 install paramiko
 #isi data
 azi=$(cat /root/nsdomain)
 domain=$(cat /etc/xray/domain)
+clear
+echo ""
 echo "INSTALL BOT CREATE SSH via TELEGRAM"
-read -e -p "[*] Input Your Id Telegram :" admin
 read -e -p "[*] Input Your bot Telegram :" token
+echo
+read -e -p "[*] Input Your Id Telegram :" admin
+echo
 read -e -p "[*] Input username Telegram :" user
 
 cat > /media/cybervpn/var.txt << END
