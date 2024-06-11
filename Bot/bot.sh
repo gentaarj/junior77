@@ -11,14 +11,15 @@ exit 0
 fi
 
 # dir virtual
-pip3 install virtualenv
-cd /usr/bin
-virtualenv myenv
-source myenv/bin/activate
+
 #install
 cp /media/cybervpn/var.txt /tmp
 cp /root/cybervpn/var.txt /tmp
 rm -rf cybervpn
+pip3 install virtualenv
+cd /media
+virtualenv myenv
+source myenv/bin/activate
 apt update && apt upgrade -y
 apt install python -y
 apt install python3 python3-pip -y
