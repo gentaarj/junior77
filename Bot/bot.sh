@@ -29,7 +29,7 @@ cd cybervpn
 rm var.txt
 rm database.db
 virtualenv myenv
-source myenv/bin/activate
+source myenv/media/activate
 pip3 install -r requirements.txt
 pip install pillow
 pip install speedtest-cli
@@ -55,7 +55,8 @@ PUB="7fbd1f8aa0abfe15a7903e837f78aba39cf61d36f183bd604daa2fe4ef3b7b59"
 OWN="$user"
 SALDO="100000"
 END
-
+cp /media/cybervpn/var.txt /tmp
+cp /root/cybervpn/var.txt /tmp
 
 clear
 echo "Done"
