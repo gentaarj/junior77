@@ -17,9 +17,6 @@ cp /media/cybervpn/var.txt /tmp
 cp /root/cybervpn/var.txt /tmp
 rm -rf cybervpn
 pip3 install virtualenv
-cd /media
-virtualenv myenv
-source myenv/bin/activate
 apt update && apt upgrade -y
 apt install python -y
 apt install python3 python3-pip -y
@@ -31,6 +28,8 @@ unzip cybervpn.zip
 cd cybervpn
 rm var.txt
 rm database.db
+virtualenv myenv
+source myenv/bin/activate
 pip3 install -r requirements.txt
 pip install pillow
 pip install speedtest-cli
@@ -47,12 +46,11 @@ echo
 read -e -p "[*] Input Your Id Telegram :" admin
 echo
 read -e -p "[*] Input username Telegram :" user
-
+mkdir -p /media/cybervpn
 cat > /media/cybervpn/var.txt << END
-ADMIN="$admin"
 BOT_TOKEN="$token"
+ADMIN="$admin"
 DOMAIN="$domain"
-DNS="$azi"
 PUB="7fbd1f8aa0abfe15a7903e837f78aba39cf61d36f183bd604daa2fe4ef3b7b59"
 OWN="$user"
 SALDO="100000"
